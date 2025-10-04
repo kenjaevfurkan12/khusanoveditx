@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KHUSANOVEDITX — Fan site</title>
+  <meta name="description" content="KHUSANOVEDITX — fan site and donations page" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --sky:#87CEFA;        /* sky blue */
+      --city-blue:#66b3ff;  /* brighter accent */
+      --deep:#0a3a66;       /* dark blue for headings */
+      --black:#101010;
+      --muted:#5b6b7a;
+      --card:#ffffff;
+      --radius:14px;
+      --shadow: 0 12px 30px rgba(10, 50, 90, 0.08);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f6fbff, #f0f8ff);color:var(--black);line-height:1.45}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:linear-gradient(90deg,var(--sky),var(--city-blue));box-shadow:0 6px 20px rgba(10,60,120,0.06)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#fff,#e6f6ff);display:grid;place-items:center;font-weight:800;color:var(--deep);box-shadow:var(--shadow)}
+    header h1{margin:0;font-size:20px;color:var(--deep)}
+    header p{margin:0;font-size:13px;color:rgba(10,20,30,0.65)}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--deep);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
+    .cta{background:var(--deep);color:white;padding:10px 14px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
+
+    main{max-width:1100px;margin:22px auto;padding:0 18px}
+    .hero{display:flex;gap:22px;align-items:center}
+    .hero-left{flex:1;background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+    .hero-left h2{color:var(--deep);margin:0 0 8px}
+    .hero-left p{color:var(--muted);margin:0 0 14px}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;border:2px solid rgba(102,179,255,0.12)}
+    /* large screens: make gallery taller to mimic 4K feel */
+    @media(min-width:1000px){ .gallery img{height:220px} }
+
+    /* right-side bio/card */
+    .hero-right{width:360px;flex-shrink:0}
+    .card{background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;color:var(--deep)}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+
+    /* Visa/donate block */
+    .donate{margin-top:16px;border-radius:12px;padding:14px;background:linear-gradient(90deg,#f9feff,#eefaff);display:flex;align-items:center;gap:12px;border:1px solid rgba(102,179,255,0.08)}
+    .visa-logo{width:86px;height:32px;display:inline-block}
+    .donate p{margin:0;color:var(--muted);font-size:14px}
+    .donate .donate-btn{margin-left:auto;background:var(--deep);color:white;border:none;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(6,12,30,0.45);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal{background:white;border-radius:12px;padding:18px;max-width:520px;width:100%;box-shadow:0 20px 50px rgba(10,25,60,0.3)}
+    .modal h4{margin:0 0 6px}
+    .modal p{color:var(--muted);margin:0 0 12px}
+    .modal .close{background:transparent;border:1px solid #e6eefc;padding:8px 10px;border-radius:10px;cursor:pointer}
+
+    /* contact footer */
+    footer{margin-top:28px;padding:26px;background:linear-gradient(180deg,#f3fbff,#eef8ff);border-top:1px solid rgba(100,170,255,0.06)}
+    .footer-grid{display:flex;gap:20px;align-items:center;max-width:1100px;margin:0 auto}
+    .contact{margin-left:auto;display:flex;gap:10px;align-items:center}
+    .contact a{color:var(--deep);text-decoration:none;font-weight:600}
+
+    /* responsive */
+    @media(max-width:900px){ .hero{flex-direction:column} .hero-right{width:100%} .gallery{grid-template-columns:repeat(2,1fr)} nav{display:none} .brand p{display:none} .cta{display:none} }
+    @media(max-width:540px){ .gallery img{height:120px} header{padding:12px} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">
+  <img src="khsv11.jpg" alt="Khusanov Logo" style="height: 60px; width: 60px; border-radius: 8px;">
+</div>
+      <div>
+        <h1>KHUSANOVEDITX</h1>
+        <p>Fans of Khusanov — All things Khusanov</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#gallery">Photos</a>
+      <a href="#bio">Biography</a>
+      <a href="#donate">Donate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cta" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Contact</button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h2>Welcome to KHUSANOVEDITX</h2>
+        <p>Your fan hub for all photos, news and support for Abdukodir Khusanov — (replace name spelling as you prefer). High-quality images and short bio below.</p>
+
+        <!-- Gallery: replace src with your 4K images (host them on an image host or your server). -->
+        <div id="gallery" class="gallery" aria-label="Kuzanov photo gallery">
+          <!-- Example placeholders: replace URL with your own high-res images -->
+          <img src="khsv1.jpg" alt="Khusanov Photo 1" loading="lazy" />
+          <img src="khsv2.jpg" alt="Khusanov Photo 2" loading="lazy" />
+          <img src="khsv3.webp" alt="Khusanov Photo 3 " loading="lazy" />
+          <img src="khsv4.jpg" alt="Khusanov Photo 4 " loading="lazy" />
+        </div>
+
+        <p style="margin-top:12px;color:var(--muted);font-size:14px">
+          Tip: for 4K photos use images at least 3840×2160 px and host them on a fast CDN or an image hosting service (Imgur, Cloudinary, or your web host). Always check copyright before posting player photos — use images you own or have permission to use.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card" id="bio">
+          <h3>Abdukodir Khusanov — Short Bio</h3>
+          <div class="meta">Centre-back | Manchester City | Uzbekistan</div>
+          <p style="margin-top:8px;color:var(--muted)">
+            Abdukodir Khusanov (born 2004) is an Uzbek defender who moved to Manchester City after impressive performances in Europe. He previously played for Lens and has represented Uzbekistan at youth and senior levels. Known for his pace, strength and defensive awareness, Khusanov became the first Uzbek to sign for a Premier League club. (Sources below.) 
+          </p>
+
+          <small style="display:block;margin-top:10px;color:var(--muted);font-size:13px">
+            Sources: Manchester City, Wikipedia, Reuters. :contentReference[oaicite:1]{index=1}
+          </small>
+
+          <!-- Donate block (we DO NOT display full card numbers) -->
+          <div id="donate" class="donate" style="margin-top:12px">
+            <!-- Inline Visa-like mark (simple svg) -->
+            <div style="display:flex;align-items:center;gap:10px">
+              <svg class="visa-logo" viewBox="0 0 80 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect rx="4" width="80" height="24" fill="#fff" />
+                <path d="M10 17l2-10h3.2L13 17h-3zM21 7h2.6l-2.6 10h-2.4L21 7zM26 7h3.4c2.4 0 3.8 1 3.8 3.1 0 1.5-1 2.3-1.9 2.7 1.1.3 1.8 1.2 1.8 2.6 0 1.9-1.4 3.1-4 3.1H26V7zm2.5 4.7c0-1.1-.5-1.5-1.8-1.5h-1v3h1.1c1.2 0 1.7-.5 1.7-1.5z" fill="#1a1f71"/>
+              </svg>
+            </div>
+
+            <div style="flex:1">
+              <p style="margin:0">Support the channel — donate securely. For security, we do not publish full card numbers here.</p>
+            </div>
+
+            <button class="donate-btn" onclick="openDonate()">Donate</button>
+          </div>
+
+        </div>
+
+        <!-- small quick links -->
+        <div style="margin-top:14px;display:flex;gap:10px">
+          <a href="#" class="cta" style="flex:1;text-align:center;text-decoration:none">YouTube</a>
+          <a href="#" class="cta" style="flex:1;text-align:center;text-decoration:none;background:#fff;color:var(--deep);border:1px solid rgba(10,40,80,0.06)">Instagram</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- More content / extras -->
+    <section style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px" class="card">
+        <h4>About the channel</h4>
+        <p style="color:var(--muted);margin-top:8px">Khusanoveditx is a fan channel dedicated to sharing highlights, edits and news about Abdukodir Khusanov. Use the contact details below to request collabs, promos or verified donation details.</p>
+      </div>
+
+      <div style="width:320px" class="card">
+        <h4>Quick facts</h4>
+        <ul style="margin:8px 0 0 16px;color:var(--muted)">
+          <li>Position: Centre-back / Right-back</li>
+          <li>Club: Manchester City</li>
+          <li>Nationality: Uzbekistan</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer / contact -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <strong>KHUSANOVEDITX</strong>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">Fan site • Not affiliated with the club</div>
+      </div>
+
+      <div class="contact">
+        <!-- Replace email and phone with your real contact details -->
+        <a href="mailto: kenjaevfurkan12@gmail.com">kenjaevfurkan12@gmail.com</a>
+        <a href="tel:+992 502142110">+992 502142110</a>
+        <a href="https://youtube.com/@khusanoveditx?si=mihTG313iKUC62Cx" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Donate Modal (opens when visitor clicks Donate) -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document">
+      <h4>Secure donation options</h4>
+      <p>For security, I do not publish full card details on the website. Please choose one of the safe options below:</p>
+      <ol style="color:var(--muted)">
+        <li>Send me an email at <strong>kenjaevfurkan12@gmail.com</strong> and I will reply with secure payment instructions (bank transfer or invoicing).</li>
+        <li>Donate via a secure processor: add a link to your PayPal / Stripe / BuyMeACoffee profile (recommended).</li>
+        <li>Use a direct transfer but share only masked card info or request my invoice privately.</li>
+      </ol>
+
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <button class="close" onclick="closeDonate()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // open / close donate modal
+    function openDonate(){
+      document.getElementById('modalBackdrop').style.display = 'flex';
+    }
+    function closeDonate(){
+      document.getElementById('modalBackdrop').style.display = 'none';
+    }
+
+    // small courtesy: replace placeholder images quickly (example)
+    // You can programmatically swap in high-res images like:
+    // document.querySelectorAll('.gallery img')[0].src = 'https://your-host/image1-4k.jpg';
+  </script>
+</body>
+</html>
